@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Blog</title>
+    <link rel="shortcut icon" href="img/profile.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+    <style>
+      section {
+        position: relative;
+        padding: 5em 0;
+      }
+      .contact-link {
+        text-decoration: none;
+        display: block;
+        margin-bottom: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Blog ✈️ </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+              <a class="nav-link" href="movie.html">Movie</a>
+            </div>
+          </div>
+          <a href="blog.html" class="btn btn-primary me-3">Go back</a>
+        </div>
+    </nav>
+
+    <!-- blog -->
+     <section>
+      <div class="container">
+        <form action="" class="row" id="formPost">
+          <div class="col-md-6 mt-3">
+            <label for="" class="form-label">Judul Artikel</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="col-md-6 mt-3">
+            <label for="" class="form-label">Nama Author</label>
+            <input type="text" class="form-control" id="author">
+          </div>
+          <div class="col-md-6 mt-3">
+            <label for="" class="form-label">Kategori</label>
+            <select name="" id="category" class="form-select">
+            <option value="">..pilih..</option>
+            <option>Edukation</option>
+            <option>Technology</option>
+            <option>Sains</option>
+            <option>Politik</option>
+            <option>Islam Media</option>
+          </select>
+          </div>
+          <div class="col-md-6 mt-3">
+            <label for="" class="form-label">Link Gambar</label>
+            <input type="text" class="form-control" id="image">
+          </div>
+          <div class="col-12 mt-5">
+            <input id="x" type="hidden" name="content">
+            <trix-editor input="x"></trix-editor>
+          </div>
+          <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-info">Publis</button>
+          </div>
+        </form>
+      </div>
+     </section>
+  
+     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module">
+      import { addPost } from './js/firebase.js'
+      $('#formPost').submit(function(e) {
+        e.preventDefault()
+        const title = $('#title').val()
+        const authorId = $('#author').val()
+        const category = $('#category').val()
+        const image = $('#image').val()
+        const content = $('#x').val()
+        try {
+          addPost(title, authorId, category, image, content)
+          alert('Berhasil menambahkan data Post!')
+        } catch(error) {
+          alert('Error Posting: ', error);
+        }
+      })
+    </script>
+  </body>
+</html>

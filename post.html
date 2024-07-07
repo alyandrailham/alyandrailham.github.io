@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="img/profile.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      section {
+        position: relative;
+        padding: 5em 0;
+      }
+      .contact-link {
+        text-decoration: none;
+        display: block;
+        margin-bottom: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Pages ✈️ </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+              <a class="nav-link" href="movie.html">Movie</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <!-- blog -->
+     <section>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom" id="category">
+              From the Firehose
+            </h3>
+      
+            <article class="blog-post">
+              <h2 class="display-5 link-body-emphasis mb-1" id="title">Sample blog post</h2>
+              <p class="blog-post-meta">by <a href="#" id="author">Mark</a></p>
+      
+              <img src="https://st.depositphotos.com/2934765/53192/v/450/depositphotos_5
+              31920820-stock-illustration-photo-available-vector-icon-default.jpg" srcset="" class="img-fluid w-100 mt-3" id="image">
+              </article>
+          </div>
+      
+          <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+              <div class="p-4 mb-3 bg-body-tertiary rounded">
+                <h4 class="fst-italic">About</h4>
+                <p class="mb-0">Artikrl ini ditulis oleh Jaz academy angkatan 2023-2024</p>
+              </div>
+      
+              <div>
+                <h4 class="fst-italic">Recent posts</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                      <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                      <div class="col-lg-8">
+                        <h6 class="mb-0">Example blog post title</h6>
+                        <small class="text-body-secondary">January 15, 2024</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                      <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                      <div class="col-lg-8">
+                        <h6 class="mb-0">This is another blog post title</h6>
+                        <small class="text-body-secondary">January 14, 2024</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                      <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                      <div class="col-lg-8">
+                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                        <small class="text-body-secondary">January 13, 2024</small>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+      
+
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module">
+      import { getPostById } from './js/firebase.js'
+      const url = new URL(window.location.href)
+      const postId = url.searchParams.get('id')
+      getPostById(postId)
+
+      if (postId) {
+        getPostById(postId).then(post => {
+          if (post) {
+            $('#category').html(post.category)
+            $('#title').html(post.title)
+            $('#author').html(post.authorId)
+            $('#likes').html(post.likes)
+            $('#content').html(post.content)
+            $('#image').attr('src', post.image)
+
+          }
+        }) 
+      }
+    </script>
+    </body>
+</html>

@@ -12,31 +12,47 @@
         position: relative;
         padding: 10em 0;
     }
+    .contact-link {
+              text-decoration:none ;
+              display: block;
+  
+          }
     
   </style>
   <!--NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg bg-info fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Portfolio</a>
+          <a class="navbar-brand" href="#">Portfolio 🚀</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">about</a>
-              <a class="nav-link" href="#">project</a>
-              <a class="nav-link" href="#">contact</a>
+              <a class="nav-link" href="#about">about</a>
+              <a class="nav-link" href="#project">project</a>
+              <a class="nav-link" href="#Pendidikan">Pendidikan</a>
+              <a class="nav-link" href="#contact">contact</a>
+              <div class="dropdown">
+                <a class="btn btn-info-subtle dropdown-toggle" href="#blog" href="#Movie" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  pages
+                </a>
+              
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                  <li><a class="dropdown-item" href="Movie.html">Movie</a></li>
+                </ul>
+              </div>
              
           </div>
         </div>
       </nav>
     <!-- HOME -->
-<section class="bg-info-subtle">
+<section class="bg-info-subtle" id="home">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 text-end"> 
-                <h4 class="display-4">Halo Nama Saya Alyandra</h4>
+            <div class="col-md-6 text-center text-md-end my-4"> 
+                <h4 class="display-4">Hai i'am Alyandra 😊</h4>
                 <h5 class="display-6">Saya <span class="text-info">Content Creator & Editor</h5>
                   <!DOCTYPE html>
                   <html lang="en">
@@ -48,7 +64,7 @@
                   </head>
                   <body>
                       <div class="container text-center mt-4">
-                          <a href="https://wa.me/628111592503" target="_blank" class="btn btn-info rounded-5">Call Me</a>
+                          <a href="https://wa.me/628111592503" target="_blank" class="btn btn-info mt-4 rounded-5">Call Me</a>
                       </div>
                   </body>
                   </html>
@@ -67,7 +83,7 @@
 </section>
 
     <!-- about -->
-   <section>
+   <section id="about">
     <div class="container px-5">
         <div class="row d-flex justify-content-center">
             <div class="col-2 text-center text-info mt-4">
@@ -125,10 +141,10 @@
     </div>
 </section>
 
-  <!-- logo & bar size -->
+  <!-- Pendidikan -->
 
   <section>
-    <div class="container">
+    <div class="container" id="Pendidikan">
       <div class="row">
         <div class="col-md-8">
           <h5 class="text-center">Education</h5>
@@ -219,19 +235,25 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
-      <style>
-          .contact-link {
-              text-decoration:none ;
-              display: block;
-  
-          }
-      </style>
-  
+        
   </head>
   <body>
+
+    <!-- sosial media -->
+ <section  class="bg-primary-subtle">
+    <div class="container">
+    <div class="text-center mb-5">
+      <h3 class="display-6">Sosial Media</h3>
+      <h5>Youtube - Jaz Entertaiment</h5>
+    </div>
+    <div class="row" id="youtubePlaylist">
+     
+    </div>
+    </div>
+ </section>
      
   
-    <section class="bg-info-subtle" id="project">
+    <section class="bg-info-subtle" id="contact">
         <!-- konten contact -->
         <div class="container mt-5">
           <div class="row">
@@ -250,7 +272,7 @@
                   </a>
               </div>
               <div class="col-lg-3">
-                  <a class="contact-link mt-2" href="http://alyandra.1453" target="blank">
+                  <a class="contact-link mt-2" href="http://instagram.com/alyandra.1453" target="blank">
                       <i class="bi bi-instagram me-2"></i>
                       profil instagram
                   </a>
@@ -265,5 +287,6 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/youtube.js"></script>
   </body>
 </html>
