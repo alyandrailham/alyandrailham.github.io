@@ -1,7 +1,7 @@
 $('#tombol').on('click',function(){
    $('#daftar-film').html('')
    $.ajax({
-      url: 'http://www.omdbapi.com',
+      url: 'https://www.omdbapi.com',
       type: 'get',
       dataType: 'json',
       data:{
@@ -46,7 +46,7 @@ $('#daftar-film').on('click', '.detail', function() {
    let id = $(this).data('id')
    console.log(id)
    $.ajax({
-      url: 'http://www.omdbapi.com',
+      url: 'https://www.omdbapi.com',
       type: 'get',
       dataType: 'json',
       data:{
